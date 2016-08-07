@@ -82,4 +82,4 @@ angular.module( 'investigateService', [] )
 
 最后，我们可以结束这一个组件的开发了，可以将它们的样式中的display设置为none了。
 
-[! 最终的浮出层的效果图](final.png)
+![最终的浮出层的效果图](final.png)

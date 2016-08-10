@@ -1,0 +1,16 @@
+<div>
+	<div class="deletePromptBackground"></div>
+    <div class="promptBox">
+		<div class="promptTitle">
+			提示
+			<div class="glyphicon glyphicon-remove promptRemove" ng-click="promptBox.cancel()"></div>
+		</div>
+		<div class="promptMessage">
+			{{promptBox.message}}
+		</div>
+		<div class="promptFooter">
+			<button ng-click="promptBox.confirm()">确定</button>
+			<button ng-click="promptBox.cancel()">取消</button>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,15 @@
+<div class="container-fluid myColor">
+	<nav class="row">
+		<ul class="col-xs-offset-1 myNav">
+			<!--
+            	作者：qxfnapoleon@163.com
+            	时间：2016-07-25
+            	描述：当前的页面显示的是什么。这个导航链接的字体样式就会变得更大一些
+            -->
+			<li ng-class="{showCurrentPage:currentPage=='manage'}">
+				<a ng-href=''><span class="glyphicon glyphicon-question-sign"></span>问卷管理</a>
+			</li>
+			<li ng-class="{showCurrentPage : currentPage=='myInvestigate'}"><a ng-href=''>我的问卷</a></li>
+		</ul>
+	</nav>
+</div>

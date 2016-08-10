@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app="investigate">
+	<head>
+		<meta charset="UTF-8">
+		<!--<meta name="viewport" content="width=device-width" />-->
+		<title>使用angularJS制作小型调查问卷网站</title>
+		<link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="./css/index.css" />
+		
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	    <!--[if lt IE 9]>
+	      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<header>
+			<!--每一个视图中都应该包含的标题栏-->
+			<nav-bar></nav-bar>
+		</header>
+		<section ng-view>
+			<!--<ng-include src="template/createNewInvestigate.html"></ng-include>-->
+			<!--<create-new></create-new>-->
+			<!--<my-section></my-section>-->
+		</section>
+		<footer>
+			<my-footer></my-footer>
+		</footer>
+		
+		<!--
+        	作者：qxfnapoleon@163.com
+        	时间：2016-07-25
+        	描述：引入脚本文件以及angularJS文件
+        -->
+        <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+        <script src="http://apps.bdimg.com/libs/angular.js/1.5.0-beta.0/angular-route.min.js"></script>
+        <script src="service/service.js"></script>
+        <script src="filter/filter.js"></script>
+		<script src="./directive/directive.js"></script>
+		<script src="controller/route-controller.js"></script>
+		<script src="js/pie.js"></script>
+		<script>
+			var investigate = angular.module( 'investigate', 
+					['ngRoute', 'directive', 'viewerController', 'pageFilter'] );
+			investigate.config( ['$routeProvider', function( $pro ) {
+				$pro.when( '/list', {
+					template : '<investigate-list></investigate-list>'
+				})
+				.when( '/create', {
+					template : '<create-new></create-new>'
+				})
+				.when( '/show', {
+					template : '<show-investigate></show-investigate>'
+				} )
+				.otherwise( {
+					redirectTo : '/list'
+				})
+			}])
+			.run( function() {
+			
+			})
+			
+		</script>
+	</body>
+</html>

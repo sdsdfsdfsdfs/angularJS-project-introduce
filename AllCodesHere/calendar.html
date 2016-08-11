@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width"  />
+		<style>
+			*{
+				margin:0;
+				padding:0;
+			}
+			li{
+				list-style: none;
+			}
+			.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+			.clearfix{*+height:1%;}
+			.calendarWraper{
+				width:400px;
+				margin:auto;
+				border:1px  solid red;
+				text-align: center;
+				font-size: 18px;
+				font-family: "微软雅黑";
+			}
+			.calendarTitle{
+				display:flex;
+				justify-content:center;
+				padding:8px;
+				box-sizing: border-box;
+			}
+			.calendarTitle>button{
+				margin-left:6px;
+				margin-right:6px;
+				padding:4px 8px;
+				background: lightgray;
+				border:1px solid lightgray;
+				border-radius:4px;
+				cursor:pointer;
+			}
+			.calendarTitle>button:hover{
+				color:white;
+				background: #080808;
+			}
+			
+			
+			.calendarWraper>ul:nth-child(2) > li {
+				background: #99CCFF;
+			}
+			.weekBar{
+				display: flex;
+			}
+			.weekBar>li{
+				width:14%;
+				display: inline-block;
+				border-bottom: 1px solid lightgray;
+				border-right:1px solid lightgray;
+				cursor:pointer;
+				border-radius:4px;
+			}
+			.weekBar>li:hover{
+				background: #008000;
+			}
+			.dark{
+				background: gray;
+			}
+			
+			.info{
+				width:80%;
+				margin-top:40px;
+				margin:auto;
+			}
+			
+		</style>
+		<title>日历组件</title>
+	</head>
+	<body>
+		<div class="calendarWraper">
+			<div class="calendarTitle">
+				<button> << </button>
+				<button> < </button>
+				<span>年 / 月</span>
+				<button> > </button>
+				<button> >> </button>
+			</div>
+			<ul class="weekBar">
+				<li>Sun</li>
+				<li>Mon</li>
+				<li>Tue</li>
+				<li>Wed</li>
+				<li>Thu</li>
+				<li>Fri</li>
+				<li>Sat</li>
+			</ul>
+		</div>
+		<div class="info">
+			<p>提供的API有</p>
+			<p>1、getDate()，返回当前日历的时间，这是一个Date对象</p>
+			<p>2、reset()，重置时间为系统时间</p>
+			<p>
+				3、setDate( date, format );<hr />
+				format：需要设置的时间参数，可以有yyyy-mm-dd、yyyy-mm、mm-dd、yyyy、mm、dd<br />
+				data：调用者传递的数据，与format相对应，如，yyyy-mm-dd对应的可以写成2016-8-9,必须是字符串
+			</p>
+			<pre>
+				
+			</pre>
+		</div>
+		<script src="calendar.js"></script>
+		<script>
+			var calendarWraper = document.querySelector( '.calendarWraper' );
+			var calendar = new calendar( calendarWraper );
+			
+		</script>
+	</body>
+</html>
